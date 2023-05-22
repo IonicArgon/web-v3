@@ -1,11 +1,12 @@
 <script setup lang="ts">
 import BaseLayout from './layout/BaseLayout.vue';
+import HeaderComponent from './components/HeaderComponent.vue';
 </script>
 
 <template>
   <BaseLayout>
     <template #header>
-      <h1>Header</h1>
+      <HeaderComponent />
     </template>
 
     <template #default>

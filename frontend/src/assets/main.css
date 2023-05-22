@@ -1,0 +1,15 @@
+:root {
+  --primary: #150f13;
+  --secondary: #f9f6f8;
+  --primary-btn: #b5c9bd;
+  --secondary-btn: #f2edf0;
+  --accent: #b5c9bd;
+}
+
+body {
+  background-color: var(--secondary);
+  color: var(--primary);
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.2rem;
+  line-height: 1.5;
+}
