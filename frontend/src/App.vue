@@ -1,6 +1,19 @@
 <script setup lang="ts">
 import BaseLayout from './layout/BaseLayout.vue';
 import HeaderComponent from './components/HeaderComponent.vue';
+import { onMounted } from 'vue';
+
+interface Props {
+  theme: string;
+}
+const props = withDefaults(defineProps<Props>(), {
+  theme: 'light',
+});
+
+onMounted(() => {
+  const initialTheme = localStorage.getItem('theme') || props.theme;
+  document.documentElement.setAttribute('data-theme', initialTheme);
+});
 </script>
 
 <template>
@@ -19,7 +32,3 @@ import HeaderComponent from './components/HeaderComponent.vue';
     </template>
   </BaseLayout>
 </template>
-
-<style scoped>
-
-</style>

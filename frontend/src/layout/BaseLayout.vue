@@ -3,35 +3,28 @@
 </script>
 
 <template>
-  <div class="container">
-    <header>
+  <div class="b">
+    <header class="
+      w-full
+      fixed
+      top-0
+      left-0
+      -translate-y-2
+    ">
       <slot name="header"></slot>
     </header>
-    <main>
+    <main class="
+      w-1/2 
+      mx-auto
+      pt-28
+    ">
       <slot></slot>
     </main>
-    <footer>
+    <footer class="
+      w-1/2
+      mx-auto
+    ">
       <slot name="footer"></slot>
     </footer>
   </div>
 </template>
-
-<style scoped lang="scss">
-header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 999;
-  width: 100%;
-  padding: 0 30% 0 30%;
-}
-
-main {
-  margin-top: 100px;
-  padding: 0 30% 0 30%;
-}
-
-footer {
-  padding: 0 30% 0 30%;
-}
-</style>
