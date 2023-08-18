@@ -10,13 +10,20 @@ const styles = {
   }),
 };
 
-const components = {};
+const components = {
+  Link: {
+    baseStyle: (props: any) => ({
+      color: mode("#007ba7", "#87cefa")(props),
+      textUnderlineOffset: 3,
+    }),
+  },
+};
 
 const colors = {};
 
 const config = {
-  initialColorMode: "light",
-  useSystemColorMode: false,
+  initialColorMode: "dark",
+  useSystemColorMode: true,
 };
 
 const fonts = {
