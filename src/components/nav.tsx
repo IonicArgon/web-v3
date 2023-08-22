@@ -31,9 +31,7 @@ const NavItem = ({ href, name }: NavItemProps) => {
   const inactiveTextColor = useColorModeValue("#aaa", "#777");
 
   return (
-    <Link 
-      href={href}
-      >
+    <Link href={href}>
       <Box
         as="a"
         display="inline-block"

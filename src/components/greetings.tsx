@@ -5,9 +5,9 @@ import { Box, Heading, Fade } from "@chakra-ui/react";
 
 export default function Greetings() {
   const greetings = [
-    "Hello, my name is Marco!",
-    "Bonjour, je m'appelle Marco!",
-    "你好, 我的名字是 Marco!",
+    "hi, my name is marco",
+    "salut, je m'appelle marco",
+    "nǐ hǎo, wǒ de míng zì shì marco",
   ];
 
   let [index, setIndex] = useState(0);
