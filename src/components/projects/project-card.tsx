@@ -1,10 +1,11 @@
 "use client";
 
 import {
-  Box,
+  Badge,
   Card,
   CardHeader,
   CardBody,
+  Flex,
   Heading,
   Text,
   useColorModeValue,
@@ -17,6 +18,7 @@ interface ProjectCardProps {
   date: string;
   href: string;
   description: string;
+  mainTag: string;
 }
 
 export default function ProjectCard({
@@ -24,6 +26,7 @@ export default function ProjectCard({
   date,
   href,
   description,
+  mainTag,
 }: ProjectCardProps) {
   const themeColor = useColorModeValue("#eee", "#333");
 
@@ -31,9 +34,14 @@ export default function ProjectCard({
     <Card bg={themeColor}>
       <CardHeader pb="0">
         <Link href={href}>
-          <Heading size="md" mb={2}>
-            {title}
-          </Heading>
+          <Flex>
+            <Heading size="md" mb={2}>
+              {title}
+            </Heading>
+            <Badge fontSize="0.8em" ml="auto" alignSelf="center">
+              {mainTag}
+            </Badge>
+          </Flex>
           <Text fontSize="sm" color="gray.500">
             {format(parseISO(date), "MMMM dd, yyyy")}
           </Text>

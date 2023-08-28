@@ -45,7 +45,11 @@ export default function ProjectPage({ params }: Params) {
 
   return (
     <article>
-      <ProjectHeader title={project.title} date={formatDate(project.date)} />
+      <ProjectHeader
+        title={project.title}
+        date={formatDate(project.date)}
+        tags={project.tags}
+      />
       <MDXContent components={mdxComponents} />
     </article>
   );

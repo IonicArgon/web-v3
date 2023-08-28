@@ -21,6 +21,7 @@ export default function Projects() {
             date={project.date}
             href={project.url}
             description={project.description}
+            mainTag={project.tags[0]}
           />
         ))}
       </ProjectCardWrapper>

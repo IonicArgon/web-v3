@@ -17,6 +17,11 @@ const Project = defineDocumentType(() => ({
       type: "date",
       required: true,
     },
+    tags: {
+      type: "list",
+      of: { type: "string" },
+      required: true,
+    },
   },
   computedFields: {
     url: {
