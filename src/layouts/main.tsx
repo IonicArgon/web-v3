@@ -39,6 +39,7 @@ export default function MainLayout({ children }: any) {
                 scrollbarWidth: "none",
                 "-ms-overflow-style": "none",
               }}
+              className="none"
             >
               {children}
             </Container>

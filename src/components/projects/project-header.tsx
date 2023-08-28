@@ -1,7 +1,6 @@
 "use client";
 
 import { Box, Heading, Text } from "@chakra-ui/react";
-import { format, parseISO } from "date-fns";
 
 interface Props {
   title: string;
@@ -15,7 +14,7 @@ export default function ProjectHeader({ title, date }: Props) {
         {title}
       </Heading>
       <Text fontSize="sm" color="gray.500">
-        {format(parseISO(date), "MMMM dd, yyyy")}
+        {date}
       </Text>
     </Box>
   );

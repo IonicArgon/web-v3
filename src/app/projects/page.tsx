@@ -11,7 +11,7 @@ export default function Projects() {
   );
 
   return (
-    <>
+    <div>
       <ProjectsHeading />
       <ProjectCardWrapper>
         {projects.map((project: Project) => (
@@ -24,6 +24,6 @@ export default function Projects() {
           />
         ))}
       </ProjectCardWrapper>
-    </>
+    </div>
   );
 }
