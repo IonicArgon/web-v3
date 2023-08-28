@@ -25,6 +25,14 @@ function H2(props: any) {
   );
 }
 
+function H3(props: any) {
+  return (
+    <Box mt={4}>
+      <Heading size="sm" mt={4} {...props} />
+    </Box>
+  );
+}
+
 function OL(props: any) {
   return <Text as="ol" mt={4} lineHeight="tall" {...props} />;
 }
@@ -72,14 +80,31 @@ function Img(props: any) {
   );
 }
 
+function IFrame(props: any) {
+  return (
+    <Center>
+      <Box overflow="hidden" mt={4} borderRadius={10}>
+        <iframe {...props} />
+      </Box>
+    </Center>
+  );
+}
+
+function Codeblock(props: any) {
+  return <Box as="pre" mt={4} p={4} borderRadius={10} {...props} />;
+}
+
 const mdxComponents: MDXComponents = {
   p: P,
   h2: H2,
+  h3: H3,
   ol: OL,
   ul: UL,
   blockquote: Blockquote,
   a: A,
   img: Img,
+  iframe: IFrame,
+  pre: Codeblock,
 };
 
 export default mdxComponents;

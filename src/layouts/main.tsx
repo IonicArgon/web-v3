@@ -9,6 +9,7 @@ import {
   Heading,
 } from "@chakra-ui/react";
 import Navbar from "@/components/nav";
+import Link from "next/link";
 
 export default function MainLayout({ children }: any) {
   return (
@@ -20,7 +21,9 @@ export default function MainLayout({ children }: any) {
           templateRows="65px 90vh"
         >
           <GridItem gridArea="nav">
-            <Heading>marco tan</Heading>
+            <Link href="/">
+              <Heading>marco tan</Heading>
+            </Link>
           </GridItem>
           <GridItem gridArea="space"></GridItem>
           <GridItem gridArea="nav2">
