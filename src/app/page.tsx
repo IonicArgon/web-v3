@@ -12,6 +12,7 @@ import {
 } from "@chakra-ui/react";
 import Greetings from "@/components/greetings";
 import Social from "@/components/social";
+import BlogHighlight from "@/components/blog-highlight";
 
 export default function Home() {
   return (
@@ -142,7 +143,9 @@ export default function Home() {
         them on my blog; you can check out some of them below.
       </p>
       <br />
-      <div>placeholder for linking blog posts</div>
+      
+      <BlogHighlight />
+
       <br />
       <p>
         I&apos;m always looking for new opportunities to learn and grow. If you
