@@ -1,7 +1,7 @@
 import { allProjects } from "contentlayer/generated";
 import { useMDXComponent } from "next-contentlayer/hooks";
 import ProjectHeader from "@/components/projects/project-header";
-import mdxComponents from "@/components/projects/mdx-components";
+import mdxComponents from "@/components/mdx-components";
 import { notFound } from "next/navigation";
 
 interface Params {
@@ -12,7 +12,9 @@ interface Params {
 
 function formatDate(date: string) {
   const dateToday = new Date();
-  const datePublished = new Date(date);
+  // this is such a hacky way to get the date to work god i hate js
+  const parsedDate = date.replace(/-/g, "/").replace(/T00:00:00.000Z/g, "");
+  const datePublished = new Date(parsedDate);
 
   const yearsAgo = dateToday.getFullYear() - datePublished.getFullYear();
   const monthsAgo = dateToday.getMonth() - datePublished.getMonth();

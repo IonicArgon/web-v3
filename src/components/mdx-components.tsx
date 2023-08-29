@@ -80,18 +80,26 @@ function Img(props: any) {
   );
 }
 
-function IFrame(props: any) {
-  return (
-    <Center>
-      <Box overflow="hidden" mt={4} borderRadius={10}>
-        <iframe {...props} />
-      </Box>
-    </Center>
-  );
-}
-
 function Codeblock(props: any) {
   return <Box as="pre" mt={4} p={4} borderRadius={10} {...props} />;
+}
+
+interface YoutubeProps {
+  videoID: string;
+}
+
+function Youtube({ videoID }: YoutubeProps) {
+  return (
+    <Center mt={4}>
+      <iframe
+        src={`https://www.youtube.com/embed/${videoID}`}
+        width="560"
+        height="315"
+        title="YouTube video player"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      />
+    </Center>
+  );
 }
 
 const mdxComponents: MDXComponents = {
@@ -103,8 +111,8 @@ const mdxComponents: MDXComponents = {
   blockquote: Blockquote,
   a: A,
   img: Img,
-  iframe: IFrame,
   pre: Codeblock,
+  Youtube,
 };
 
 export default mdxComponents;

@@ -10,7 +10,6 @@ import {
   Text,
   useColorModeValue,
 } from "@chakra-ui/react";
-import { format, parseISO } from "date-fns";
 import Link from "next/link";
 
 interface ProjectCardProps {
@@ -29,6 +28,12 @@ export default function ProjectCard({
   mainTag,
 }: ProjectCardProps) {
   const themeColor = useColorModeValue("#eee", "#333");
+  const parsedDate = date.replace(/-/g, "/").replace(/T00:00:00.000Z/g, "");
+  const datePublished = new Date(parsedDate).toLocaleDateString("en-US", {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  });
 
   return (
     <Card bg={themeColor}>
@@ -43,7 +48,7 @@ export default function ProjectCard({
             </Badge>
           </Flex>
           <Text fontSize="sm" color="gray.500">
-            {format(parseISO(date), "MMMM dd, yyyy")}
+            {datePublished}
           </Text>
         </Link>
       </CardHeader>
