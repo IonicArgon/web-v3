@@ -1,6 +1,6 @@
-import { allProjects } from "contentlayer/generated";
+import { allBlogs } from "contentlayer/generated";
 import { useMDXComponent } from "next-contentlayer/hooks";
-import ProjectHeader from "@/components/projects/project-header";
+import BlogHeader from "@/components/blog/blog-header";
 import mdxComponents from "@/components/mdx-components";
 import { notFound } from "next/navigation";
 
@@ -10,6 +10,7 @@ interface Params {
   };
 }
 
+//todo: abstract this out so it's shared for both blog and project
 function formatDate(date: string) {
   const dateToday = new Date();
   // this is such a hacky way to get the date to work god i hate js
@@ -40,19 +41,19 @@ function formatDate(date: string) {
   return `${fullDate} (${dateAgo})`;
 }
 
-export default function ProjectPage({ params }: Params) {
-  const project = allProjects.find((p) => p.slug === params.slug);
+export default function BlogPage({ params }: Params) {
+  const blog = allBlogs.find((p) => p.slug === params.slug);
 
-  if (!project) notFound();
+  if (!blog) notFound();
 
-  const MDXContent = useMDXComponent(project.body.code);
+  const MDXContent = useMDXComponent(blog.body.code);
 
   return (
     <article>
-      <ProjectHeader
-        title={project.title}
-        date={formatDate(project.date)}
-        tags={project.tags}
+      <BlogHeader
+        title={blog.title}
+        date={formatDate(blog.date)}
+        tags={blog.tags}
       />
       <MDXContent components={mdxComponents} />
     </article>

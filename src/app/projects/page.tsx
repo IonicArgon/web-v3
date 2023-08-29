@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { allProjects, Project } from "contentlayer/generated";
 import ProjectsHeading from "@/components/projects/heading";
 import ProjectCard from "@/components/projects/project-card";
