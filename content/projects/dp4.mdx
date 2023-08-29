@@ -1,0 +1,61 @@
+---
+title: "Design Project 4 - Not a Pun, It's Real Life"
+type: Project
+description: "Desiging an accessibility device for a real patient."
+date: 2023-04-12
+tags:
+  - IBioMed
+  - Design Project
+  - Year 1
+---
+
+This was the final design project of the year. Although not as open-ended as the previous project, there was still considerable flexibility in how we wanted to approach the patient assigned to our group.
+
+## Project Overview
+
+- **Start date:** 2023-03-03
+- **End date:** 2023-04-12
+- **My role:** Administrator
+- **Team members:** Jennifer Francis, Krishna Bhatt, Mani Nabovati Khormazard
+- **Technical skills:** Python with **Tkinter, numpy, requests,** OOP, Raspberry Pi
+- **Soft skills:** Teamwork, communication, time management, project management, user research, ideation, prototyping
+
+## Patient Profile
+
+Our team's patient was a real, 60 year-old woman diagnosed with multiple sclerosis whose name was redacted for privacy reasons. She suffers from a multitude of symptoms like foot drop, temperature sensitivity, fatigue, and loss of some fine motor skills. She had solutions in place for many of her symptoms, but we found that her temperature sensitivity was neglected, despite it being one of her most debilitating symptoms. We narrowed our focus to this symptom and came to the following set of issues:
+
+- She has difficulty regulating her body temperature, especially in the summer.
+- It is hard for her to keep track of how long she can stay outside before she overheats.
+- Casual solutions like using her phone timer are non-adaptive and tedious for her.
+
+## Our Solution
+
+We decided on a software-based approach to her temperature sensitivity problem. We prototyped an application that would be installed on a smart watch which would tell her how long she could stay outside before overheating. The application pulls real time temperature, geographic location, the patient's personal preferences, and prior data to calculate an evolving time limit. The application is written for the Raspberry Pi as a stand-in for wearable technology like the Apple Watch.
+
+We used **Tkinter** to create and render the GUI, **serial** to pull GPS data from the Raspberry Pi hat, **requests** to pull weather data from the OpenWeatherMap API, and **numpy** to generate a single-variable quadratic regression model.
+
+## My Contributions
+
+For this last project, I was the administrator which meant I was responsible to ensure our team was on track to meet set deadlines, that everyone was contributing equally, that project deliverables were submitted on time and in the right places, and that the team was prepared for the presentation. I was also responsible for producing the final Gantt chart.
+
+For technical contributions, I designed, wrote, and tested the user interface, as well as integrated all the code parts together in a cohesive, deployable application.
+
+## Takeaways
+
+Design projects are always a great way to learn new skills, but it is also helpful for honing certain skills. Not all groups of people in a team will work well together, and it is important to be able to identify and resolve conflicts as they arise. The biggest issue I identified in this team was a lack in communication between team members due to my teammates' more introverted personalities. I did not let this become a problem, however, as I made sure to check in with everyone regularly and made sure everyone was on the same page.
+
+Another really big takeaway from this project was the importance of setting realistic goals. We did not have as much time as we would've liked to work on this project, so we had to make sure that we were not overextending ourselves. However, we did end up initially designing a rather ambitious project with hardware interfaces and a mobile application. We had to scale back our project to something more manageable, and I think we did a good job of that.
+
+## Project Reflection
+
+Although it was't the big bang I wanted to end off my first year with, I am still proud of what my team and I were able to accomplish. We were able to create a working prototype that could be used by our patient to help her manage her temperature sensitivity.
+
+## Links
+
+- [GitHub](https://github.com/IonicArgon/dp4-pi-code)
+
+## Featured
+
+<Youtube videoID="AEKWMiVXzY8" />
+
+![Logo](/projects/dp-4/logo.png)
