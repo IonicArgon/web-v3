@@ -143,7 +143,7 @@ export default function Home() {
         them on my blog; you can check out some of them below.
       </p>
       <br />
-      
+
       <BlogHighlight />
 
       <br />

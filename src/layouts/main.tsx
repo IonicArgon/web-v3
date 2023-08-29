@@ -8,10 +8,14 @@ import {
   GridItem,
   Heading,
 } from "@chakra-ui/react";
+import { motion, AnimatePresence, easeInOut } from "framer-motion";
 import Navbar from "@/components/nav";
 import Link from "next/link";
+import { usePathname } from "next/navigation"
 
 export default function MainLayout({ children }: any) {
+  const pathname = usePathname();
+
   return (
     <Center pt="50px">
       <Box>
@@ -30,22 +34,32 @@ export default function MainLayout({ children }: any) {
             <Navbar />
           </GridItem>
           <GridItem gridArea="content">
-            <Container
-              minW="container.sm"
-              maxW="container.sm"
-              h="100%"
-              overflowY="scroll"
-              sx={{
-                "::-webkit-scrollbar": {
-                  display: "none",
-                },
-                scrollbarWidth: "none",
-                "-ms-overflow-style": "none",
-              }}
-              className="none"
-            >
-              {children}
-            </Container>
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={pathname}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.5, type: easeInOut }}
+                exit={{ opacity: 0 }}
+              >
+                <Container
+                  minW="container.sm"
+                  maxW="container.sm"
+                  h="100%"
+                  overflowY="scroll"
+                  sx={{
+                    "::-webkit-scrollbar": {
+                      display: "none",
+                    },
+                    scrollbarWidth: "none",
+                    "-ms-overflow-style": "none",
+                  }}
+                  className="none"
+                >
+                  {children}
+                </Container>
+              </motion.div>
+            </AnimatePresence>
           </GridItem>
         </Grid>
       </Box>
