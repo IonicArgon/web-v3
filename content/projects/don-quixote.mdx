@@ -1,0 +1,54 @@
+---
+title: "Don Quixote Discord Bot"
+type: Project
+description: "silly little creature."
+date: 2023-07-15
+tags:
+  - Hobby
+  - Discord
+  - Python
+  - silly
+---
+
+I found myself playing a lot of Limbus Company and I fell in love with this silly little creature depicted below:
+
+![Don Quixote](/projects/don-quixote/silly.gif)
+
+I decided I would write a little Python bot based on her character. All it would have was a few annoucement routines for both text channels and voice channels alike.
+
+## Version 1
+
+The first version used [Discord.py](https://discordpy.readthedocs.io/en/stable/) for everything bot-related. Halfway through the development of this version, I found out that Discord.py was no longer being maintained and a fork of it ([Pycord](https://docs.pycord.dev/en/stable/)) should've been the one I was using, but I wanted to finish this one anyway. The most complex thing about the bot was storing settings in a TOML file, but that's about it.
+
+Morning messages looked something like this:
+
+![Morning Message](/projects/don-quixote/v1-morning.png)
+
+Pings for when you started Limbus Company looked like this:
+
+![Limbus Company Ping](/projects/don-quixote/v1-ping.png)
+
+And if you were in a voice channel, it would do this:
+
+<Youtube videoID="c4hSv9e_fr4" />
+
+## Version 2
+
+Version 2 was created because Discord.py was depricated, a few features were requested from the people the bot interacted with, and I wanted to add a few features of my own. The framework was moved over to Pycord and settings continued to be saved in a TOML file. However, settings were now saved on a per-server basis, meaning this bot was now multi-server capable (even though I never deployed it to other servers). There were also a few new features:
+
+- Sending the embeds used a webhook so that the bot's name and avatar could be changed. This allowed me to add the other identities like so:
+
+![Webhooks](/projects/don-quixote/v2-webhooks.png)
+
+- The bot stopped mentioning people when sending the embed because a lot of people thought it was kinda annoying (myself included):
+
+![No Mentions](/projects/don-quixote/v2-ping.png)
+
+There were some experiments with using Docker to deploy the bot, but I never quite got it to work on my Raspberry Pi, so I just ended up sending the files over through VNC and running it manually. I also wanted to fool around with using CharacterAI to make the bot say silly things, but the trained model on the website was not to my liking, so I never got around to it.
+
+## Links
+
+- [GitHub, v1](https://github.com/IonicArgon/don-quixote/tree/main)
+- [GitHub, v2](https://github.com/IonicArgon/don-quixote-v2)
+
+(yes i am aware i could've just made a branch but shh)
