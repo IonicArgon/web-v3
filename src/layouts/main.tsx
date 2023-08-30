@@ -11,7 +11,7 @@ import {
 import { motion, AnimatePresence, easeInOut } from "framer-motion";
 import Navbar from "@/components/nav";
 import Link from "next/link";
-import { usePathname } from "next/navigation"
+import { usePathname } from "next/navigation";
 
 export default function MainLayout({ children }: any) {
   const pathname = usePathname();
@@ -34,32 +34,32 @@ export default function MainLayout({ children }: any) {
             <Navbar />
           </GridItem>
           <GridItem gridArea="content">
-            <AnimatePresence mode="wait">
-              <motion.div
-                key={pathname}
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 0.5, type: easeInOut }}
-                exit={{ opacity: 0 }}
-              >
-                <Container
-                  minW="container.sm"
-                  maxW="container.sm"
-                  h="100%"
-                  overflowY="scroll"
-                  sx={{
-                    "::-webkit-scrollbar": {
-                      display: "none",
-                    },
-                    scrollbarWidth: "none",
-                    "-ms-overflow-style": "none",
-                  }}
-                  className="none"
+            <Container
+              minW="container.sm"
+              maxW="container.sm"
+              h="100%"
+              overflowY="scroll"
+              sx={{
+                "::-webkit-scrollbar": {
+                  display: "none",
+                },
+                scrollbarWidth: "none",
+                "-ms-overflow-style": "none",
+              }}
+              className="none"
+            >
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={pathname}
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ duration: 0.5, type: easeInOut }}
+                  exit={{ opacity: 0 }}
                 >
                   {children}
-                </Container>
-              </motion.div>
-            </AnimatePresence>
+                </motion.div>
+              </AnimatePresence>
+            </Container>
           </GridItem>
         </Grid>
       </Box>

@@ -33,7 +33,6 @@ const NavItem = ({ href, name }: NavItemProps) => {
   return (
     <Link href={href}>
       <Box
-        as="a"
         display="inline-block"
         px={4}
         py={2}
