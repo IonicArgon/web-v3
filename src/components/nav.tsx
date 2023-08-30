@@ -1,6 +1,6 @@
 "use client";
 
-import { Box, Heading, useColorModeValue, VStack } from "@chakra-ui/react";
+import { Box, useColorModeValue, VStack } from "@chakra-ui/react";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 
