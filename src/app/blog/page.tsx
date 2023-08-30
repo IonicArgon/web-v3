@@ -4,7 +4,7 @@ import BlogCard from "@/components/blog/blog-card";
 import BlogCardWrapper from "@/components/blog/blog-card-wrapper";
 import compareDesc from "date-fns/compareDesc";
 
-export default async function Blog() {
+export default function Blog() {
   const blogs = allBlogs.sort((a, b) =>
     compareDesc(new Date(a.date), new Date(b.date)),
   );
